@@ -19,6 +19,12 @@ Route::get('/', function () {
     return view ('products',[
         'heading'=> 'Product Catalog',
      'products' => Product::all()
+     
 
 ]);
+});
+Route::get('/product/{product}', function(Product $product){
+    return view('product',[
+        'product' => $product
+    ]);
 });
