@@ -35,5 +35,11 @@
 @endforeach
 
 </table>
+<nav>
+        {{$products->links()}}
+     </nav>
 </div>
+<div class="row">
+    <a href="/products/create" type="button" class="btn btn-info"> New Product Form</a>
+</div>   
 @endsection
