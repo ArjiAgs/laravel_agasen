@@ -1,5 +1,4 @@
-@extends('layout')
-
+<x-layout>
 @section('content')
 
 <h5>Product Name: {{$product->name}}</h5>
@@ -10,4 +9,4 @@
         <li>Product Unit: {{$product->unit}} </li>
     </ul>
 </div>
-@endsection
+</x-layout>

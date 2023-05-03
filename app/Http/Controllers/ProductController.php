@@ -37,4 +37,28 @@ class ProductController extends Controller
         return redirect('/')->with('success', 'New product saved successfully!');
 
     }
+
+    public function edit(Product $product){
+        return view('products.edit', ['product'=>$product]);
+    }
+
+    public function update(Product $product, Request $request){
+        $formField = $request->validate([
+            'name' => 'required',
+            'unit' => 'required',
+            'unitPrice' => 'required|decimal:0,2',
+            'category' => 'required',
+        ]);
+
+        $product->update($formField);
+
+        return redirect('/')->with('success', 'Product updated successfully!');
+
+    }
+
+    public function destroy(Product $product){
+        $product->delete();
+
+        return redirect('/')->with('success', 'Product deleted successfully!');
+    }
 }

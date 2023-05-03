@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index']); 
 
 Route::get('/product/{product}', [ProductController::class, 'show']);
+
+Route::delete('/products/{product}', [ProductController::class, 'destroy']);
    
 Route::get('/products/create', [ProductController::class, 'create']);
 
 Route::post('/product', [ProductController::class, 'store']);
+
+Route::get('/product/{product}/edit', [ProductController::class, 'edit']);
+
+Route::put('/products/{product}', [ProductController::class, 'update']);
